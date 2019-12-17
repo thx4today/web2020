@@ -6,7 +6,7 @@
 	<style>
 		*{padding: 0;margin: 0;}
 		div.wrap{
-			background-color:pink;
+			_background-color:pink;
 			padding:20px 0;
 		}
 		div.wrap>div.section{
@@ -14,7 +14,7 @@
 			background-color: #00f;
 			margin:0 auto
 		}
-		div.wrap>div.section:after{
+		.clearfix:after{
 			content:"";clear: both;display: block;
 		}
 		div.wrap>div.section>div{
@@ -25,18 +25,39 @@
 		div.wrap>div.section>div:last-child{margin-right: 0;}
 		div.wrap img{width: 100%;}
 		div.wrap h3{text-align: center;margin-bottom:10px}
+		.pink{background-color:pink;}
+		.gray{background-color:gray;}
 	</style>
 </head>
 <body>
-	<div class="wrap">
-		<h3>gallery</h3>
-		<div class="section">
+	<div class="wrap pink">
+		<h3>gallery01</h3>
+		<div class="section clearfix">
 			<div><img src="../images/testimg.jpg" alt=""></div>
 			<div><img src="../images/testimg.jpg" alt=""></div>
 			<div><img src="../images/testimg.jpg" alt=""></div>
 			<div><img src="../images/testimg.jpg" alt=""></div>
 		</div>
 	</div>
+	<div class="wrap">
+		<h3>gallery02</h3>
+		<div class="section clearfix">
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+		</div>
+	</div>
+	<div class="wrap gray">
+		<h3>gallery03</h3>
+		<div class="section clearfix">
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+			<div><img src="../images/testimg.jpg" alt=""></div>
+		</div>
+	</div>
+	
 </body>
 </html>
 
