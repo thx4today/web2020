@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>layout</title>
+	<style>
+		/*reset*/
+		*{margin: 0;padding: 0;}
+		li{list-style: none}
+		a:visited,a:link{
+			text-decoration:none;color:black;
+		}
+
+		div#header{
+			width: 1000px;background-color:skyblue;
+			margin:0 auto;
+			padding-top:20px;
+		}
+		div#header>h1{
+			width: 100px;background-color: #fff;
+			margin:0 auto;text-align:center;
+			margin-bottom:20px;
+		}
+		div#header>ul.gnb:after{
+			content:"";display: block;clear: both;
+		}
+		div#header>ul.gnb>li{float: left;width:166.66px;}
+		div#header>ul.gnb>li>a{
+			background-color: #f00;
+			display: block;text-align: center;line-height:40px;
+			font-weight:bold;color:white;
+		}
+		div#header>ul.gnb>li>a:hover{background-color:orange;}
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>LOGO</h1>
+		<ul class="gnb">
+			<li><a href="#">menu1</a></li>
+			<li><a href="#">menu2</a></li>
+			<li><a href="#">menu3</a></li>
+			<li><a href="#">menu4</a></li>
+			<li><a href="#">menu5</a></li>
+			<li><a href="#">menu6</a></li>
+		</ul>
+	</div>
+	<div class="visual"></div>
+	<div class="container">
+		<ul>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+			<li><img src="../images/testimg.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div id="footer">
+		
+	</div>
+
+</body>
+</html>
