@@ -11,6 +11,7 @@
 			text-decoration:none;color:black;
 		}
 
+		/*header start*/
 		div#header{
 			width: 1000px;background-color:skyblue;
 			margin:0 auto;
@@ -31,10 +32,26 @@
 			font-weight:bold;color:white;
 		}
 		div#header>ul.gnb>li>a:hover{background-color:orange;}
+		/*header end*/
+
+		div.visual{height: 400px;background-color:pink;}
+
+		div.container{
+			width: 1000px;margin:0 auto;background-color: #f00;
+		}
+		div.container>ul:after{
+			content:"";display: block;clear: both;
+		}
+		div.container>ul>li{
+			float: left;width: 242.5px;margin-right:10px;
+		}
+		div.container>ul>li:last-child{margin-right:0;}
+		div.container>ul>li>img{width: 100%;display: block;}
 
 	</style>
 </head>
 <body>
+	<!-- header -->
 	<div id="header">
 		<h1>LOGO</h1>
 		<ul class="gnb">
@@ -46,6 +63,8 @@
 			<li><a href="#">menu6</a></li>
 		</ul>
 	</div>
+	<!-- header -->
+
 	<div class="visual"></div>
 	<div class="container">
 		<ul>
