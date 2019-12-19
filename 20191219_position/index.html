@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>position</title>
+
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
@@ -10,11 +11,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
-		div.box{
-			width: 200px;height: 200px;
-			background-color:skyblue;
-			position:absolute;left:-20px;bottom:50px;
-		}
+
 		div.view{background-color: #f00;}
 		#header{
 			width: 1000px;height: 50px;background-color:skyblue;
@@ -40,16 +37,40 @@
 
 		div.visual{width: 1000px;margin:0 auto;}
 
+
+		.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0px none;
+    background: #fff;
+	}
+
+
+	div.box{
+		width: 200px;height: 200px;
+		background-color:skyblue;
+		position:absolute;left:100px;top:100px;
+		z-index:2;
+	}
+	div.box1{
+		width: 200px;height: 200px;
+		background-color:red;
+		position:absolute;left:150px;top:150px;
+		z-index:1;
+	}
+	div.boxWrap{
+		position: relative;
+		background-color: #00f;
+		height: 200px;
+	}
+	
+
 	</style>
 	<script>
 		$(document).ready(function(){
 			$(".slider").bxSlider();
 		});
-
-
-		function name(){
-
-		}
 	</script>
 </head>
 <body>
@@ -76,6 +97,11 @@
 			<div><img src="../images/pc02.jpg" alt=""></div>
 			<div><img src="../images/pc03.jpg" alt=""></div>
 		</div>
+	</div>
+
+	<div class="boxWrap">
+		<div class="box"></div>
+		<div class="box1"></div>
 	</div>
 	
 </body>
