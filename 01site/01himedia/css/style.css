@@ -23,3 +23,10 @@ nav.util_menu>ul>li:last-child:before{
 	content:"";display: block;width: 1px;height: 10px;background-color:#f00;
 	position: absolute;top:10px;right:0;
 }
+header#main_header>div.main_middle{
+	width: 980px;margin: 0 auto;background-color: #eee;
+}
+header#main_header>div.main_middle>h1{
+	width: 180px;margin: 0 auto;
+	text-align: center;
+}
