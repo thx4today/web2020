@@ -98,3 +98,11 @@ section#container_wrap>div.container li:nth-child(3){background-color: #488ce0;}
 section#container_wrap>div.container li:nth-child(4){background-color: #3db5f2;}
 section#container_wrap>div.container li:nth-child(5){background-color: #95c8ff;}
 /*section end*/
+
+/*article start*/
+article#container{width: 980px;margin: 0 auto}
+article#container li{
+	float: left;width: 309px;margin-right:26.5px;
+}
+article#container li:last-child{margin-right: 0;}
+/*article end*/
