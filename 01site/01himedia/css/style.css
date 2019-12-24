@@ -62,7 +62,28 @@ div.visual_wrap{
 div.visual_wrap>div.visual{
 	width: 980px;height: 400px;
 	margin:0 auto;position: relative;
+	overflow:hidden;
 }
 div.visual_wrap>div.visual>img{position: absolute;}
 div.visual_wrap>div.visual>img.visual_text{top:80px;}
-div.visual_wrap>div.visual>img.visual_img{right:30px;top:50px;}
+div.visual_wrap>div.visual>img.visual_img{right:30px;top:40px;}
+
+/*visual end*/
+
+/*section start*/
+section#container_wrap{
+	background-color: #ccc;
+}
+section#container_wrap>div.container{
+	width: 980px;height: 196px;margin: 0 auto}
+
+section#container_wrap>div.container img{
+	display: block;
+	margin:0 auto;
+}
+
+
+section#container_wrap>div.container li{
+	float: left;width: 196px;
+}
+/*section end*/
