@@ -73,6 +73,7 @@ div.visual_wrap>div.visual>img.visual_img{right:30px;top:40px;}
 /*section start*/
 section#container_wrap{
 	background-color: #ccc;
+	margin-bottom:30px;
 }
 section#container_wrap>div.container{
 	width: 980px;height: 196px;margin: 0 auto}
@@ -102,7 +103,14 @@ section#container_wrap>div.container li:nth-child(5){background-color: #95c8ff;}
 /*article start*/
 article#container{width: 980px;margin: 0 auto}
 article#container li{
-	float: left;width: 309px;margin-right:26.5px;
+	float: left;width:310px;margin-right:25px;
 }
 article#container li:last-child{margin-right: 0;}
+
+article#container li div.card_body{
+	padding:15px;
+	border: 1px solid #ccc;
+	border-top:0 none;
+}
+article#container img{display: block;}
 /*article end*/
