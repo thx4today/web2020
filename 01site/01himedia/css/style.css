@@ -114,3 +114,21 @@ article#container li div.card_body{
 }
 article#container img{display: block;}
 /*article end*/
+
+
+article#containerOne{width: 980px;margin: 0 auto}
+article#containerOne li{
+	float: left;width:310px;height: 165px;
+	margin-right:25px;
+	border: 1px solid #ccc;position: relative;
+	overflow: hidden;
+}
+article#containerOne li:last-child{margin-right: 0;}
+
+article#containerOne li div.card_body{
+	position: relative;
+	padding:15px;
+	width:180px;
+	
+}
+article#containerOne img{display: block;position: absolute;right:-20px;top:10px;}
