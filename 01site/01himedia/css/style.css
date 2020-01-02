@@ -116,7 +116,7 @@ article#container img{display: block;}
 /*article end*/
 
 
-article#containerOne{width: 980px;margin: 0 auto}
+article#containerOne{width: 980px;margin: 0 auto;margin-bottom:30px;}
 article#containerOne li{
 	float: left;width:310px;height: 165px;
 	margin-right:25px;
