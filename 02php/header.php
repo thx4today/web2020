@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -39,8 +38,8 @@
 
 		/*section*/
 		section#container{
-			width: 960px;
-			margin:0 auto;
+			width: 960px;height:1000px;
+			margin:auto;
 			background-color: #555;
 		}
 
@@ -51,8 +50,6 @@
 
 		/* sub */
 		.sub{height: 200px;}
-
-
 		.content{
 		float: left;width: 850px;height: 1000px;background-color: #ff0;
 		}
@@ -60,9 +57,10 @@
 		float: right;width: 100px;height:1000px;background-color: #00f;
 		}
 
-
 		/* sub company */
-		.company{background-color:#0ff}
+		.company{background-color:#0ff};
+
+	
 	</style>
 
 </head>
@@ -78,12 +76,4 @@
 				<li><a href="#">menu2</a></li>
 			</ul>
 		</nav>
-	</header>	
-	<div class="sub company"></div>
-	<section id="container">
-		<div class="content">1</div>
-		<aside class="menu">2</aside>
-	</section>
-	<footer id="footer"></footer>
-</body>
-</html>
+	</header>
