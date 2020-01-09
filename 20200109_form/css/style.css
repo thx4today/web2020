@@ -22,10 +22,22 @@ div#header h1 a{
 	text-indent:-9999px;
 }
 
-#content fieldset .field{border-bottom: 1px solid #f0f0f0;}
+#content fieldset .field{
+	border-bottom: 1px solid #f0f0f0;
+	position: relative;
+}
 #content fieldset .field .inp-field{
 	width: 350px;height: 49px;border:0 none;
 	font-size:16px;color:#999;text-indent:12px;
 }
 
-#content fieldset .field .icon{}
+#content fieldset .field .icon{
+	display: block;width: 97px;height: 48px;
+	_background-color: #f00;position: absolute;
+	top:0;right:10px;text-indent:-9999px;
+	background-image: url(../images/ico_join3.png);
+	background-repeat:no-repeat;
+}
+#content fieldset .field .icon.mail{background-position:0 -47px;}
+#content fieldset .field .icon.pass{background-position:0 -466px;}
+#content fieldset .field .icon.pass2{background-position:0 -515px;}
