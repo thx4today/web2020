@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>menu</title>
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
-		nav.gnb{width: 1000px;margin: 0 auto;background-color:#ddd;}
+		nav.gnb{width: 1000px;margin: 0 auto;background-color:#ddd;position: relative;z-index:1;}
 		.submenu{display: none;}
 		nav.gnb>ul>li{float: left;width: 20%;height: 40px;}
 		nav.gnb>ul>li>a{
@@ -15,13 +16,13 @@
 		nav.gnb>ul>li:hover{background-color:skyblue;} 
 
 		/*세로1메뉴*/
-		/*nav.gnb>ul>li:hover .submenu{display: block;}
-		.submenu{background-color:skyblue;}*/
+		nav.gnb>ul>li:hover .submenu{display: block;}
+		.submenu{background-color:skyblue;}
 		
 		 /*전체메뉴*/
-		nav.gnb>ul:hover .submenu{display: block;}
+		/*nav.gnb>ul:hover .submenu{display: block;}
 		nav.gnb>ul>li:hover .submenu{background-color:skyblue;}
-		.submenu{background-color:#ddd;}
+		.submenu{background-color:#ddd;}*/
 
 
 		/*submenu*/
@@ -31,9 +32,17 @@
 
 
 		/* slider visual*/
-		.visual{height: 400px;background-color:pink;}
+		.visual{width: 1000px;margin: 0 auto}
+		.visual img{width: 100%;}
 
 	</style>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".slider").bxSlider();
+		});
+	</script>
 </head>
 <body>
 	<!-- nav.gnb>ul.clearfix>li*5>(a[#]>{menu$})+(ul.submenu>li*4>a[#]>{sm0$}) -->
@@ -82,6 +91,12 @@
 			</li>
 		</ul>
 	</nav>
-	<div class="visual"></div>
+	<div class="visual">
+		<ul class="slider">
+			<li><img src="../images/pc01.jpg" alt=""></li>
+			<li><img src="../images/pc02.jpg" alt=""></li>
+			<li><img src="../images/pc03.jpg" alt=""></li>
+		</ul>
+	</div>
 </body>
 </html>
