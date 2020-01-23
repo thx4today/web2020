@@ -13,7 +13,7 @@
 	</style>
 	<script>
 		$(document).ready(function(){
-			$(".slider").bxSlider({
+			var slider = $(".slider").bxSlider({
 				  //pager:false,            // 현재 위치 페이징 표시 여부 설정.
 			      moveSlides:2,         // 슬라이드 이동시 갯수 설정.
 			      slideWidth:192,        // 슬라이드 마다 너비 설정.
@@ -21,8 +21,10 @@
 			      maxSlides:5,          // 최대 노출 개수를 설정합니다.
 			      slideMargin:10,      // 슬라이드간의 간격을 설정합니다.
 			      auto:true,             // 자동으로 흐를지 설정합니다.
-			      autoHover:true    // 마우스 오버시 정시킬지 설정합니다.
-				   
+			      autoHover:true,    // 마우스 오버시 정시킬지 설정합니다.
+				   onSlideAfter: function(){  
+			       console.log(slider.getCurrentSlide())
+			    }
 			});
 			
 		});

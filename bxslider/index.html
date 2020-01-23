@@ -34,8 +34,15 @@
 			var mySlide = $(".slider").bxSlider({
 				auto:true,
 				controls:false,
-				pager:false
+				pager:false,
+				onSlideAfter: function($slideElement, oldIndex, newIndex){  
+			       console.log("이전"+oldIndex);
+			       console.log("새것"+newIndex);
+			       console.log("지금"+mySlide.getCurrentSlide());
+			    }
 			});
+
+			console.log(mySlide.getCurrentSlide());
 
 			$(".nextBtn").click(function(){
 				mySlide.goToNextSlide();
