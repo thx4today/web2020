@@ -4,13 +4,13 @@ header#main_header{
 	position: relative;
 }
 	#header_top{
-		width: 1260px;height: 50px;background-color:pink;
+		width: 1260px;_height: 50px;background-color:pink;
 		position: absolute;left:50%;margin-left:-630px;
-		top:40px;
+		top:40px;z-index:1;
 	}
-	#header_top > h1{float: left;background-color:#f00;}
+	#header_top > h1{float: left;background-color:#f00;height: 50px;}
 	#header_top > #main_menu{float: right;background-color: #0f0;}
 	#main_menu{}
 	#main_menu>ul{}
-	#main_menu>ul>li{float: left;}
-	#main_menu>ul>li>a{}
+	#main_menu>ul>li{float: left;height: 50px;}
+	#main_menu>ul>li>a{display: block;line-height:50px;padding:0 30px;}
