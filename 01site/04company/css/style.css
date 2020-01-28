@@ -39,6 +39,22 @@ header#main_header{
 		background-color: #fff;margin: 10px auto;
 	}
 
+	/*content*/
+	.content{
+		width: 1260px;margin: 0 auto;
+		position: absolute;left:50%;margin-left:-630px;
+		bottom:0;
+	}
+	.content > ul > li{
+		float: left;width: 25%;height: 315px;background-color: #fff;;
+	}
+	.content > ul > li:nth-child(2n){background-color:skyblue;}
+	.content > ul > li.ct3st{width: 50%;}
+	.content > ul > li.ct6st{width: 50%;}
+	.content > ul > li.ct7st{height: 630px;}
+	.content > ul > li.ct8st{width: 50%;}
+	.content > ul > li.ct11st{width: 50%;}
+
 
 
 
