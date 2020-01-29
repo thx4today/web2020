@@ -71,11 +71,28 @@
 				arrdata[i] = i+1;
 			}
 
+			selectArr();
+		}
+
+		function selectArr(){
 			var num = arrdata.length;
 			for(var k=0;k<num;k++){
 				document.write(arrdata[k]+",");
 			}
+
+			addArr();
 		}
+
+		function addArr(){
+			var sum = 0;
+			for(var i=0;i<arrdata.length;i++){
+				sum = sum + arrdata[i];
+			}
+
+			document.write("<p> 배열데이터의 합 : "+sum+"</p>")
+			document.write("<a href='script_array.html'>돌아가기</a>")
+		}
+
 	</script>
 	<button type="button" onclick="insertArr()">배열 생성/조회/연산</button>
 </body>
