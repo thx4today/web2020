@@ -73,6 +73,29 @@ header#main_header{
 	}
 	.content > ul > li.ct2st:hover img.bgImg{transform:scale(1.2)}
 	.content > ul > li.ct3st{width: 50%;}
+	.content > ul > li.ct3st h2{position: relative;	z-index:1;left:50px;top:30px;}
+	.content > ul > li.ct3st .slider2Wrap{
+		position: absolute;top: 0;left: 0;
+		width: 630px;
+	}
+	.content > ul > li.ct3st .slider2 li{}
+	.content > ul > li.ct3st .slider2 li div{
+		width: 315px;height: 315px;float: left;
+	}
+	.content > ul > li.ct3st .slider2 li div.left{
+		padding-top:75px;padding-left:50px;padding-right:50px;
+		background-color: #fff;
+	}
+	.content > ul > li.ct3st .slider2 li div.left:after{
+		content:"";border-width:20px;border-style:solid;
+		border-color:transparent transparent transparent white;
+		position: absolute;left:315px;top:145px;
+	}
+	.content > ul > li.ct3st .btn{position: absolute;bottom:50px;right:365px;}
+	.content > ul > li.ct3st .btn img{float: left;display: block;border: 1px solid #cdcdcd;}
+	.content > ul > li.ct3st .btn img:first-child{border-right:none;}
+
+	
 	.content > ul > li.ct4st{background-color: #B8307C;}
 	.content > ul > li.ct5st{background-color: #413D3E;}
 
