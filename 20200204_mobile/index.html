@@ -11,8 +11,14 @@
 	<script>
 		$(document).ready(function(){
 			$(".icon").click(function(){
+				
 				var topClass = $("#myTopmenu").attr("class");
 				console.log(topClass);
+				if ( topClass == "topnav clearfix"){
+					$("#myTopmenu").addClass("responsive");
+				}else{
+					$("#myTopmenu").removeClass("responsive");
+				}
 			});
 		});
 	</script>
