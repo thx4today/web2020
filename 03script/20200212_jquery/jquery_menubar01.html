@@ -29,19 +29,12 @@
 			position: relative;
 		}
 	</style>
-	<script>
-		$(document).ready(function(){
-			$(".menu>li").mouseover(function(){
-				var menuLi = $(this).index();
-				$(".bar").animate({left:menuLi*200},100);
-			});
-		});
-	</script>
+	
 </head>
 <body>
 	<div class="nav">
 		<ul class="menu clearfix">
-			<li class="active">menu1</li>
+			<li>menu1</li>
 			<li>menu2</li>
 			<li>menu3</li>
 			<li>menu4</li>
@@ -49,5 +42,25 @@
 		</ul>
 		<div class="bar"></div>
 	</div>
+
+	<script>
+		
+			function nowMenu(menu){
+				$(".menu>li").eq(menu).addClass("active");
+				$(".bar").animate({left:menu*200},100);
+
+				$(".menu>li").mouseenter(function(){
+					var menuLi = $(this).index();
+					$(".bar").stop().animate({left:menuLi*200},100);
+				});
+				$(".nav").mouseleave(function(){
+					$(".bar").animate({left:menu*200},100);
+				});
+
+			}
+			nowMenu(4);
+		
+
+	</script>
 </body>
 </html>
