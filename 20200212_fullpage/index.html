@@ -16,6 +16,7 @@
 				slideNavigation:true,
 				afterLoad:function(anchorslink,index){
 					console.log(anchorslink+","+index);
+					
 					if(index == 2){
 						$("#onView").addClass("move");
 					}else{
@@ -73,6 +74,13 @@
 		#onView{top:20%;transition:0.3s;opacity:0;}
 		#onView.move{top:50%;opacity:1;}
 
+#myVideo {
+    position: absolute;bottom: 0;top: 0;right: 0;
+   	width: 100%;height: 100%;background-size: 100% 100%;
+    background-color: black;background-position: center center;
+    object-fit: cover;z-index: 3;
+}
+
 	</style>
 </head>
 <body>
@@ -86,10 +94,15 @@
 	</nav>
 	<div id="fullpage">
 		<div class="section page" id="page1" data-anchor="1st">
+			<video id="myVideo" autoplay muted data-autoplay>
+				<source src="../images/video.mp4">
+			</video>
 
 			<div class="scroll">
 				<a href="#2st"><img src="images/btn_scroll.png" alt=""></a>
-			</div>
+			</div>0
+
+			
 		</div>
 		<div class="section page" id="page2" data-anchor="2st">
 			<div class="main" id="onView">
@@ -111,7 +124,29 @@
 				<a href="#4st"><img src="images/btn_scroll.png" alt=""></a>
 			</div>
 		</div>
-		<div class="section page" id="page4" data-anchor="4st">4</div>
+		<div class="section page" id="page4" data-anchor="4st">
+			<style>
+				.slide{position: relative;}
+				.slide .sView1,
+				.slide .sView2,
+				.slide .sView3,
+				.slide .sView4{position: absolute;width: 500px;height: 500px;background-color: skyblue;left:50%;right:50%;transform:translate(-50%,-50%);}
+			</style>
+			<!-- div.slide*4>.sView$>lorem30 -->
+			<div class="slide">
+				<div class="sView1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit temporibus, tenetur. Nisi deleniti inventore totam consequuntur libero vel, voluptatum doloremque voluptate quod illo sequi vitae magnam dolorem adipisci beatae quos.</div>
+			</div>
+			<div class="slide">
+				<div class="sView2">Quam quaerat ad temporibus eos maiores voluptatem rem, totam perferendis et minus! Nemo laboriosam quaerat id voluptatibus sit similique corrupti obcaecati quia, labore ipsam ut. Voluptatem voluptatum, dolor culpa veritatis!</div>
+			</div>
+			<div class="slide">
+				<div class="sView3">Nostrum corrupti quos, ratione repudiandae eius officia sapiente perferendis doloremque, repellat distinctio ad. Fugit exercitationem reiciendis nulla, rem! Laboriosam perspiciatis quae reiciendis soluta repellendus nemo ratione cum reprehenderit sed nihil?</div>
+			</div>
+			<div class="slide">
+				<div class="sView4">Tempora molestias harum ipsam numquam nesciunt laboriosam eius cupiditate. Dolore reprehenderit velit obcaecati eligendi maxime quod exercitationem quae, voluptatum! Ullam doloribus praesentium voluptatibus quidem eligendi nemo reiciendis veritatis ea minus.</div>
+			</div>
+
+		</div>
 	</div>
 </body>
 </html>
