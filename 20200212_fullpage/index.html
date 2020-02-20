@@ -3,10 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>fullpage</title>
-	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/fullpage.css">
+	<link rel="stylesheet" href="css/jquery.bxslider.css">
+	<link rel="stylesheet" href="css/reset.css">
 	<script src="js/jquery-3.1.1.min.js"></script>
 	<script src="js/jquery.fullPage.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("#fullpage").fullpage({
@@ -24,6 +26,21 @@
 					}
 				}
 			});
+
+			$(window).resize(function(){
+				sHeight();
+			});
+
+			function sHeight(){
+				var sliderHeight = $(window).height();
+				$(".slider1").height(sliderHeight);
+			}
+			
+			sHeight();
+			
+
+
+			$(".sliderWrap").bxSlider({pager:false});
 		});
 	</script>
 	<style>
@@ -81,6 +98,11 @@
     object-fit: cover;z-index: 3;
 }
 
+.bx-wrapper {
+    
+    margin-bottom: 0px;
+    }
+
 	</style>
 </head>
 <body>
@@ -125,14 +147,13 @@
 			</div>
 		</div>
 		<div class="section page" id="page4" data-anchor="4st">
-			<style>
+			<!-- <style>
 				.slide{position: relative;}
 				.slide .sView1,
 				.slide .sView2,
 				.slide .sView3,
 				.slide .sView4{position: absolute;width: 500px;height: 500px;background-color: skyblue;left:50%;right:50%;transform:translate(-50%,-50%);}
 			</style>
-			<!-- div.slide*4>.sView$>lorem30 -->
 			<div class="slide">
 				<div class="sView1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit temporibus, tenetur. Nisi deleniti inventore totam consequuntur libero vel, voluptatum doloremque voluptate quod illo sequi vitae magnam dolorem adipisci beatae quos.</div>
 			</div>
@@ -144,8 +165,19 @@
 			</div>
 			<div class="slide">
 				<div class="sView4">Tempora molestias harum ipsam numquam nesciunt laboriosam eius cupiditate. Dolore reprehenderit velit obcaecati eligendi maxime quod exercitationem quae, voluptatum! Ullam doloribus praesentium voluptatibus quidem eligendi nemo reiciendis veritatis ea minus.</div>
-			</div>
+			</div> -->
 
+			<!-- div.sliderWrap>div.slider$*5>lorem50 -->
+			<div class="sliderWrap">
+				<div class="slider1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem laborum cumque fugit quae consectetur voluptates sunt laudantium, excepturi tempore, eum consequuntur ullam error velit harum ex, ad corporis veritatis. Corrupti, ad labore eaque earum, saepe consectetur, facilis modi impedit fugit molestias illum fugiat consequuntur accusamus nulla dolorum qui repellendus nemo.</div>
+				<div class="slider1">At quos, consequuntur eligendi recusandae adipisci, unde totam a minus impedit rerum amet voluptate maiores! Libero dolores molestiae tenetur et corporis, vel quibusdam, consectetur reprehenderit accusantium sed assumenda porro, officia deserunt nostrum est cumque debitis natus voluptatibus iste aut autem aliquam! Provident nostrum corporis incidunt ipsam id, rem placeat deleniti.</div>
+				<div class="slider1">Amet eligendi sunt nulla illo fuga ad nemo, dolor nesciunt. Tempora commodi iure, aperiam enim dolor, molestiae perferendis temporibus quas amet corporis aspernatur eos fugit ipsam deleniti soluta provident! Vel nihil tenetur, repudiandae dicta, debitis nulla quo quos iusto animi labore inventore mollitia fugiat, voluptatum sapiente dolores expedita alias earum.</div>
+				<div class="slider1">Itaque, consequatur tenetur rem corporis excepturi dolor. Eos dolore beatae perferendis mollitia, labore nemo dignissimos? Facere nulla vero voluptatum libero magni esse accusantium iste placeat. Facere et, debitis laudantium consequuntur accusantium. Saepe dolorum, officia temporibus ab minima illum architecto natus quibusdam! Voluptatum maiores, ab itaque, delectus a eligendi! Assumenda, ad.</div>
+				<div class="slider1">Assumenda commodi iure consequatur debitis, suscipit dolor autem error rem ipsum voluptate reprehenderit repudiandae dolore vel, animi, ratione quisquam, maiores veniam inventore magnam ad expedita deleniti tempore pariatur praesentium. Corrupti similique praesentium doloribus tenetur voluptatem, minima dolor dolores soluta temporibus tempora, deserunt, consequatur reiciendis est sed ea! Harum quo, inventore.</div>
+			</div>
+		</div>
+		<div class="section page fp-auto-height" id="page5" data-anchor="5st">
+			<div class="footer" style="height:300px;background:skyblue"></div>
 		</div>
 	</div>
 </body>
