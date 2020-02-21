@@ -54,6 +54,18 @@
 		}
 		#car1{position: absolute;left:30px;width: 120px;height: 70px;transition: 0.3s;opacity:0}
 		#car1.move{left:300px;opacity:1}
+
+		.top{
+			position: fixed;width: 100px;height: 100px;line-height: 100px;
+			right: 50px;bottom: 50px;border-radius: 50%;
+			background-color: #000;color:white;text-align: center;
+			cursor:pointer;
+			animation:viewTop 1s infinite alternate;
+		}
+		@keyframes viewTop{
+			from{transform:translateY(0);}
+			to{transform:translateY(-20px);}
+		}
 	</style>
 </head>
 <body>
@@ -174,5 +186,6 @@
 		<p>99</p>
 		<p>100</p>
 	</div>
+	<div class="top">top</div>
 </body>
 </html>
