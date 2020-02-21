@@ -10,6 +10,8 @@
 		$(function(){
 			var menuPos = $(".nav").offset().top;
 			var car1Pos = $("#car1").offset().top;
+			var winHeight = $(document).height();
+			console.log(winHeight);
 
 
 			$(".menuPos").html(parseInt(menuPos));
@@ -33,6 +35,12 @@
 					$("#car1").addClass("move");
 				}else{
 					$("#car1").removeClass("move");
+				}
+
+				if(scrollY > winHeight/2){
+					$(".top").addClass("view");
+				}else{
+					$(".top").removeClass("view")
 				}
 			}
 
@@ -59,13 +67,18 @@
 			position: fixed;width: 100px;height: 100px;line-height: 100px;
 			right: 50px;bottom: 50px;border-radius: 50%;
 			background-color: #000;color:white;text-align: center;
-			cursor:pointer;
+			cursor:pointer;opacity:0;transition:0.5s;
 			animation:viewTop 1s infinite alternate;
 		}
 		@keyframes viewTop{
 			from{transform:translateY(0);}
 			to{transform:translateY(-20px);}
 		}
+		.top.view{opacity:1;}
+
+		$(".top").click(function(){
+				$("html").animate({scrollTop:0},300);
+			});
 	</style>
 </head>
 <body>
