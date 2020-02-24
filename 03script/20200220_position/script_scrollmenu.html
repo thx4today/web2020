@@ -6,6 +6,7 @@
 	<title>scrollmenu</title>
 	<link rel="stylesheet" href="../../css/reset.css">
 	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery.mousewheel.min.js"></script>
 	<style>
 		nav.menu{background-color: #cdcdcd;width:100%;transition:0.3s}
 		nav.menu.fixed{position: fixed;top:0;background-color: #000;}
@@ -18,15 +19,34 @@
 	</style>
 	<script>
 		$(function(){
-			$(window).scroll(function(){
-				var winTop = $(this).scrollTop();
-				console.log(winTop);
-				if(winTop>100){
-					$(".menu").addClass("fixed");
-				}else{
-					$(".menu").removeClass("fixed")
-				}
+			// $(window).scroll(function(){
+			// 	var winTop = $(window).scrollTop();
+
+			// 	if(winTop>100){
+			// 		$(".menu").addClass("fixed");
+			// 	}else{
+			// 		$(".menu").removeClass("fixed")
+			// 	}
+			// });
+
+			$(document).mousewheel(function(e,delta){
+				console.log(delta);
+				$(window).scroll(function(){
+					var winTop = $(this).scrollTop();
+
+					if(winTop>100){
+						if(delta>0){
+							$(".menu").addClass("fixed");
+						}else{
+							$(".menu").removeClass("fixed");
+						} //delta
+					}else{
+						$(".menu").removeClass("fixed");
+					} //winTop
+
+				}); //scroll end
 			});
+
 		});
 	</script>
 </head>
