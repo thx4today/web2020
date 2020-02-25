@@ -40,7 +40,48 @@
 				var target = $(this.hash);
 				var st = target.offset().top;
 				$("html").stop().animate({scrollTop:st},300);
+				return false;
 			});
+
+			var menu = $(".menu > a");
+			var section = $(".scene");
+
+
+			$(window).scroll(function(){
+				var scrollY = $(window).scrollTop();
+				
+				// basic 1st
+				// if( $(".scene").eq(0).offset().top <= scrollY ){
+				// 	$(".menu>a").removeClass("on").eq(0).addClass("on");
+				// }
+				// if( $(".scene").eq(1).offset().top <= scrollY ){
+				// 	$(".menu>a").removeClass("on").eq(1).addClass("on");
+				// }
+				// if( $(".scene").eq(2).offset().top <= scrollY ){
+				// 	$(".menu>a").removeClass("on").eq(2).addClass("on");
+				// }
+
+				// 2st for
+				// for(var i=0;i<3;i++){
+				// 	if( $(".scene").eq(i).offset().top <= scrollY ){
+				// 		$(".menu>a").removeClass("on").eq(i).addClass("on");
+				// 	}
+				// }
+
+
+				// 3st each
+				section.each(function(){
+					var i = $(this).index()-1;
+					console.log(i);
+
+					if($(this).offset().top <=scrollY){
+						menu.removeClass("on").eq(i).addClass("on");
+					}
+
+				});
+
+			});
+			
 
 		});
 	</script>
@@ -71,11 +112,12 @@
 			background-color:skyblue;z-index:1;padding-left:30px;
 		}
 		.menu a{display: inline-block;line-height: 40px;}
+		.menu a.on{background-color: #f00;;}
 	</style>
 </head>
 <body>
 	<nav class="menu">
-		<a href="#v01s">menu01</a>
+		<a href="#v01s" class="on">menu01</a>
 		<a href="#v02s">menu01</a>
 		<a href="#v03s">menu01</a>
 	</nav>
