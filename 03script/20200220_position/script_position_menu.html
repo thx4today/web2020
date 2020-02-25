@@ -7,7 +7,42 @@
 	<link rel="stylesheet" href="../../css/reset.css">
 	<script src="../../js/jquery-3.1.1.min.js"></script>
 	<script>
-		$(function(){});
+		$(function(){
+			// basic
+			// var oneTop = $("#v01s").offset().top;
+			// var twoTop = $("#v02s").offset().top;
+			// var threeTop = $("#v03s").offset().top;
+
+			// $(".menu a").eq(0).click(function(){
+			// 	$("html").animate({scrollTop:oneTop},300)
+			// });
+			// $(".menu a").eq(1).click(function(){
+			// 	$("html").animate({scrollTop:twoTop},300)
+			// });
+			// $(".menu a").eq(2).click(function(){
+			// 	$("html").animate({scrollTop:threeTop},300)
+			// });
+
+			// 2st menu
+			// var menu = $(".menu > a");
+			// var section = $(".scene");
+
+			// menu.click(function(){
+			// 	var i = $(this).index();
+			// 	console.log(i);
+			// 	var st = section.eq(i).offset().top;
+			// 	$("html").stop().animate({scrollTop:st},300);
+			// });
+
+
+			// 3st menu
+			$(".menu a").click(function(){
+				var target = $(this.hash);
+				var st = target.offset().top;
+				$("html").stop().animate({scrollTop:st},300);
+			});
+
+		});
 	</script>
 	<style>
 		html,body{height: 100%;}
@@ -31,23 +66,33 @@
 			content:"";width: 100%;height: 1px;background-color: #fff;
 			display: block;margin:10px;
 		}
+		.menu{
+			position: fixed;width: 100%;height: 40px;
+			background-color:skyblue;z-index:1;padding-left:30px;
+		}
+		.menu a{display: inline-block;line-height: 40px;}
 	</style>
 </head>
 <body>
-	<section class="scene one">
+	<nav class="menu">
+		<a href="#v01s">menu01</a>
+		<a href="#v02s">menu01</a>
+		<a href="#v03s">menu01</a>
+	</nav>
+	<section class="scene one" id="v01s">
 		<!-- div>h1>lorem5^p>lorem20 -->
 		<div>
 			<h1>Lorem ipsum dolor sit amet.</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad veniam, ipsam ducimus perferendis. Veniam eaque quisquam voluptatum expedita, aut cum.</p>
 		</div>
 	</section>
-	<section class="scene two">
+	<section class="scene two" id="v02s">
 		<div>
 			<h1>Lorem ipsum dolor sit amet.</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad veniam, ipsam ducimus perferendis. Veniam eaque quisquam voluptatum expedita, aut cum.</p>
 		</div>
 	</section>
-	<section class="scene three">
+	<section class="scene three" id="v03s">
 		<div>
 			<h1>Lorem ipsum dolor sit amet.</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad veniam, ipsam ducimus perferendis. Veniam eaque quisquam voluptatum expedita, aut cum.</p>
