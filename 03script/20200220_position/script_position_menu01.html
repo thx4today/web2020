@@ -42,26 +42,29 @@
 				contents.each(function(index){
 					if( scrollY >= contents.eq(index).offset().top-116 ){
 						menu.removeClass("on").eq(index).addClass("on");
+						current = index;
 					}
 				});
 			});
-
-			$(window).mousewheel(function(event,delta){
+			var sEvent = false;
+			$(window).on("mousewheel",function(event,delta){
 				//console.log(delta);
-				var sEvent = false;
-				if(delta<0){
+				event.preventDefault();
+				
+				if(delta < 0 && sEvent ==false){
 					sEvent = true;
 					current++;
 					console.log(current);
 					if(current==3){current=2}
 					var ct = contents.eq(current).offset().top-115;
-					$("html").stop().animate({scrollTop:ct});
+					$("html").stop().animate({scrollTop:ct},{duration:500,complete:function(){sEvent = false}});
 				}
-				if(delta>0){
+				if(delta>0  && sEvent ==false){
+					sEvent = true;
 					current--;
 					if(current<0){current=0}
 					var ct = contents.eq(current).offset().top-115;
-					$("html").stop().animate({scrollTop:ct});
+					$("html").stop().animate({scrollTop:ct},{duration:500,complete:function(){sEvent = false}});
 
 				}
 			});
