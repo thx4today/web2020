@@ -21,15 +21,21 @@
 
 			var current = 0;
 			var banner = $("#wrapper li");
+			var bannerCount = banner.length;
+			console.log(bannerCount);
 
 			function sMove(){
-				banner.eq(current).css("left",0).animate({left:"-100%"},1000);
+				move(current,"0","-100%");
 				current++; //current = current + 1;
-				if(current == 6) { current=0;}
-				banner.eq(current).css({"left":"100%"}).animate({left:0},1000);
+				if(current == bannerCount) { current=0;}
+				move(current,"100%","0");
 			}
 			//sMove();
-			setInterval(sMove,2000)
+			setInterval(sMove,2000);
+
+			function move(i,start,end){
+				banner.eq(i).css("left",start).animate({left:end},1000);
+			}
 
 		});
 	</script>
@@ -37,9 +43,6 @@
 <body>
 	<div id="wrapper">
 		<ul>
-			<li><img src="../../images/pc01.jpg" alt=""></li>
-			<li><img src="../../images/pc02.jpg" alt=""></li>
-			<li><img src="../../images/pc03.jpg" alt=""></li>
 			<li><img src="../../images/pc01.jpg" alt=""></li>
 			<li><img src="../../images/pc02.jpg" alt=""></li>
 			<li><img src="../../images/pc03.jpg" alt=""></li>
