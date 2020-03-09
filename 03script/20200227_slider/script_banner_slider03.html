@@ -20,33 +20,41 @@
 			var banner = $("ul.slider li");
 			var bCount = banner.length;
 			var i;
+			var overBtn = false;
 
 			function nextSlider(){
-				i = current + 1;
-				if(i==bCount){
-					i=0;
-					current=bCount-1;
-				}
-				var currentEl = banner.eq(current);
-				var nextEl = banner.eq(i);
-				
-				currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
-				nextEl.css({left:"100%"}).stop().animate({left:0},1000);
+				if(overBtn == false){ //버트연속클릭
+					overBtn = true;
+					i = current + 1;
+					if(i==bCount){
+						i=0;
+						current=bCount-1;
+					}
 
-				current = i;
+					var currentEl = banner.eq(current);
+					var nextEl = banner.eq(i);
+					
+					currentEl.css({left:0}).stop().animate({left:"-100%"},1000);
+					nextEl.css({left:"100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
+
+					current = i;
+				}
 			}
 			function prevSlider(){
-				i = current - 1;
-				if(i==-1){
-					i=bCount-1;
-					current=0;
-				}
-				var currentEl = banner.eq(current);
-				var nextEl = banner.eq(i);
-				currentEl.css({left:0}).stop().animate({left:"100%"},1000);
-				nextEl.css({left:"-100%"}).stop().animate({left:0},1000);
+				if(overBtn==false){
+					overBtn=true;
+					i = current - 1;
+					if(i==-1){
+						i=bCount-1;
+						current=0;
+					}
+					var currentEl = banner.eq(current);
+					var nextEl = banner.eq(i);
+					currentEl.css({left:0}).stop().animate({left:"100%"},1000);
+					nextEl.css({left:"-100%"}).stop().animate({left:0},{duration:1000,complete:function(){overBtn=false;}});
 
-				current = i;
+					current = i;
+				}
 			}
 
 			$(".bt_next").click(function(){
