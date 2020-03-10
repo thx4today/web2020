@@ -6,6 +6,7 @@
 	<title>slider</title>
 	<link rel="stylesheet" href="../../css/reset.css">
 	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../js/jquery.mousewheel.min.js"></script>
 	<style>
 
 		#wrapper{width: 500px;height: 258px;margin:20px auto;background-color:skyblue;}
@@ -27,11 +28,11 @@
 			var banner = $("ul.slider li");
 			var bCount = banner.length;
 			var i;
-			var overBtn = false;
+			var overBtn = false; // 중복실행
 			var pager = $(".pager>span");
 
 			
-
+			//다음 실행
 			$(".bt_next").click(function(){
 				if(overBtn==false){
 				 		overBtn=true;
@@ -45,6 +46,8 @@
 					slideView("next");
 				}
 			});
+
+			//이전실행
 			$(".bt_prev").click(function(){
 				if(overBtn==false){
 					overBtn=true;
@@ -77,14 +80,29 @@
 				current = i;
 			}
 
+
+			//자동실행
 			function trigger(){
 				$(".bt_next").trigger("click");
 			}
-			setInterval(trigger,3000);
+			//setInterval(trigger,3000);
 
+			//pager
 			pager.click(function(){
 				i = $(this).index();
 				slideView("next");
+			});
+
+
+			//마우스 스크롤
+			$(window).mousewheel(function(event,delta){
+				if(delta<0){
+					$(".bt_next").trigger("click");
+				}
+
+				if(delta>0){
+					$(".bt_prev").trigger("click");
+				}
 			});
 
 
