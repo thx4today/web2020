@@ -59,7 +59,7 @@
 			$("ul.sub").hide();
 			$("#menu>ul>li").hover(function(){
 				var i = $(this).index();
-				$("#menu>ul>li").eq(i).find("ul.sub").stop().fadeIn(100);
+				$("#menu>ul").eq(i).find("ul.sub").stop().fadeIn(100);
 			},function(){
 				$("ul.sub").hide();
 			});
