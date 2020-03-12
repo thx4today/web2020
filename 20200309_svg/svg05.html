@@ -10,13 +10,17 @@
 		body{background-color:skyblue;}
 		.st0{
 			fill:none;stroke:#f00;
-			stroke-width:10;
+			stroke-width:20;
 			stroke-miterlimit:10;
 			stroke-dasharray:600;
-			stroke-dashoffset:600;
+			stroke-dashoffset:0;
 			stroke-linecap:round;
-			
+			/*animation: lineAni 1s infinite  linear;	*/
 		}
+		@keyframes lineAni{
+			to{stroke-dashoffset:0;}
+		}
+
 
 
 	</style>
@@ -30,24 +34,7 @@
 		c33.846,6.406,73.594,11.535,97.18,40.481c11.61,14.247,20.266,29.724,24.362,47.677C374.04,423.79,376.254,437.749,391,448"/>
 		</svg>
 	</div>
-	<script>
-		var path = $('.svgWrapper path').get(0);
-		 var total_length = path.getTotalLength();
-		 $(window).scroll(function(){
-		 	var sScroll = 200;
-		 	var eScroll = 600;
-		 	var scrollTop = $(this).scrollTop();
-		 	var x;
-		 	
-
-		 	x = (-total_length*(scrollTop - sScroll))/(eScroll-sScroll)+total_length
-		 	if(x>total_length){x=total_length}
-		 	if(x<0){x=0}
-		 	console.log(x);
-		 	$('.st0').css("stroke-dashoffset",x)
-
-		 });
-	</script>
+	
 	<div style="height: 800px;"></div>
 </body>
 </html>
