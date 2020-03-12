@@ -13,7 +13,7 @@
 			stroke-width:20;
 			stroke-miterlimit:10;
 			stroke-dasharray:600;
-			stroke-dashoffset:0;
+			stroke-dashoffset:600;
 			stroke-linecap:round;
 			/*animation: lineAni 1s infinite  linear;	*/
 		}
@@ -24,7 +24,32 @@
 
 
 	</style>
-	
+	<script>
+		$(function(){
+			var path = $(".svgWrapper path").get(0);
+			var total_length = path.getTotalLength();
+			//console.log(total_length);
+			$(window).scroll(function(){
+				var scrollTop = $(this).scrollTop();
+				var sScroll = 200;
+				var eScroll = 600;
+				var x;
+
+				// (eScroll-sScroll):(scrollTop-sScroll)=(0-total_length):(x-total_length)
+
+				x=((scrollTop-sScroll)*(0-total_length))/(eScroll-sScroll)+total_length;
+				console.log("sTop:"+scrollTop+", x:"+x)
+
+				if(x>total_length){x=total_length}
+				if(x<0){x=0}
+				$(".st0").css("stroke-dashoffset",x);
+
+
+
+
+			});
+		});
+	</script>
 </head>
 <body>
 	<div style="height: 500px;"></div>
