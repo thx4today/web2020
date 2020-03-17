@@ -3,26 +3,23 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>flex</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
 		.wrap{
-			width: 100%;margin: auto;
+			width: 500px;height:200px;
+			margin:0 auto;
 			background-color:skyblue;
-			height:200px;
-			display:flex;
-			align-items:center;
+			display: flex;
+			justify-content:flex-end
 		}
 		.wrap div{
-			flex-grow:1;height:100px;
-			background-color: #fff;
-			display:flex;
+			flex-grow:1;
+			display: flex;
 			justify-content:center;
 			align-items:center;
+			background-color:orange;
 		}
-		.wrap div:nth-child(2n){background-color: #f00;}
-		.wrap .box2{flex:2;}
 	</style>
 </head>
 <body>
