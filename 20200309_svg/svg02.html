@@ -9,23 +9,39 @@
 		body{background-color:skyblue;}
 		.svgWrap{width: 500px;margin: auto;}
 		#svgWrapper path{
-			stroke:#fff;
-			stroke-width:1;
-			fill:#000;
+			stroke:#f00;
+			stroke-width:0.5;
+			fill:skyblue;
+			animation: textView 1s 0.5s forwards;
+		}
+		@keyframes textView{
+			form{opacity:0;fill:skyblue;}
+			to{opacity:1;fill:red;}
 		}
 
 	</style>
 	<script>
 		$(function(){
 			var pathes = $("#svgWrapper").find("path");
+			var pathLength = pathes.length;
+			console.log(pathLength);
 
-			var path = $("#svgWrapper path").get(0);
-			var total_length = path.getTotalLength();
-			console.log(total_length);
+			// for(var i=0;i<pathLength;i++){
+			// 	var path = $("#svgWrapper path").get(i);
+			// 	var total_length = path.getTotalLength();
+			// 	path.style.strokeDasharray = total_length;
+			// 	path.style.strokeDashoffset = total_length;
+			// 	$(path).animate({"strokeDashoffset":0},1000);
 
-			path.style.strokeDasharray = total_length;
-			path.style.strokeDashoffset = total_length;
-			$(path).animate({"strokeDashoffset":0},1000);
+			// }
+
+
+			pathes.each(function(i,path){
+				var total_length = path.getTotalLength();
+				path.style.strokeDasharray = total_length;
+				path.style.strokeDashoffset = total_length;
+				$(path).animate({"strokeDashoffset":0},1000);
+			});
 
 
 

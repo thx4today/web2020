@@ -24,8 +24,10 @@
     .swiper-container {
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
     .swiper-slide {
+      overflow: hidden;
       text-align: center;
       font-size: 18px;
       background: #fff;
@@ -99,6 +101,7 @@
     });
 
     console.log(swiper.activeIndex)
+    
     if (swiper.activeIndex == 0) {
         document.getElementById("my-vid").play();
       }
@@ -127,5 +130,7 @@
       
     });
   </script>
+
+  11
 </body>
 </html>
